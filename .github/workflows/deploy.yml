@@ -22,6 +22,11 @@ jobs:
         working-directory: ppl-procedure-trainer
     steps:
       - uses: actions/checkout@v4
+      # Enable GitHub Pages and set its source to "GitHub Actions" automatically,
+      # so deploy-pages doesn't 404 with "Failed to create deployment".
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
       - uses: actions/setup-node@v4
         with:
           node-version: 20
